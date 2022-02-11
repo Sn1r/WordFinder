@@ -15,9 +15,11 @@ def get_files_path():
 
 def find_word_in_files(str_to_find):
     all_files = get_files_path()
+    # Progress Bar
     for i in range(21):
         print ("\r[%-20s] %d%%" % ('='*i, 5*i), end='')
         sleep(0.01)
+        
     for file in all_files:
         with open(file, 'r') as f:
             lines = f.readlines()
