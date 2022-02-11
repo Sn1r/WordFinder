@@ -5,5 +5,4 @@ Tool for finding specific words in any file under a specified directory <br />
 📍 Tested only on Windows so far <br />
 📍 Currently case-sensitive <br />
 
-#
 Usage: python main.py {string_to_find}
