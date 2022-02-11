@@ -10,3 +10,5 @@ if __name__ == '__main__':
         '[+] Example: python main.py foo')
     except FileNotFoundError:
         print("[!] Path was not found or bad characters were entered")
+    except KeyboardInterrupt:
+        print("[!] Keyboard Interrupted")

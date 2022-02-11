@@ -8,7 +8,7 @@ colors = {
 def get_files_path():
     chosen_path = input("What is your path?\n")
     # files_path = os.path.join(os.curdir, chosen_path)
-    ext = ['.txt', '.json', '.log', '.conf', '.csv', '.html', '.php', '.py', '.rb']
+    ext = ['.txt', '.json', '.log', '.conf', '.csv', '.html', '.php', '.py', '.rb', '.xml']
     files_full_path = [os.path.join(root, f) for (root, subdirs, files) in os.walk(chosen_path) for f in os.listdir(root) if f.endswith(tuple(ext))]
     return files_full_path
 
