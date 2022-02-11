@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 colors = {
     'red':"\033[91m",
@@ -6,14 +7,17 @@ colors = {
 }
 
 def get_files_path():
-    chosen_path = input("What is your path?\n")
+    chosen_path = input("Please enter a full path: \n")
     # files_path = os.path.join(os.curdir, chosen_path)
-    ext = ['.txt', '.json', '.log', '.conf', '.csv', '.html', '.php', '.py', '.rb']
+    ext = ['.txt', '.json', '.log', '.conf', '.csv', '.html', '.php', '.py', '.rb', '.xml']
     files_full_path = [os.path.join(root, f) for (root, subdirs, files) in os.walk(chosen_path) for f in os.listdir(root) if f.endswith(tuple(ext))]
     return files_full_path
 
 def find_word_in_files(str_to_find):
     all_files = get_files_path()
+    for i in range(21):
+        print ("\r[%-20s] %d%%" % ('='*i, 5*i), end='')
+        sleep(0.01)
     for file in all_files:
         with open(file, 'r') as f:
             lines = f.readlines()
@@ -22,4 +26,5 @@ def find_word_in_files(str_to_find):
                     matched_line_prettified = line.replace(
                         str_to_find, f"{colors['red']}{str_to_find}{colors['base']}"
                     )
-                    print(f"{file}:{matched_line_prettified}")
+                    new_line = '\n'
+                    print(f"{new_line}{file}:{matched_line_prettified}")

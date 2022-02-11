@@ -12,3 +12,5 @@ if __name__ == '__main__':
         print("[!] Path was not found or bad characters were entered")
     except KeyboardInterrupt:
         print("[!] Keyboard Interrupted")
+    except PermissionError:
+        print("\n[!] Permission denied. Please make sure you have the right permissions for this directory")
