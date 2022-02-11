@@ -6,7 +6,8 @@ colors = {
 }
 
 def get_files_path(extension='.txt'):
-    files_path = os.path.join(os.curdir, 'words')
+    chosen_path = input("What is your path?\n")
+    files_path = os.path.join(os.curdir, chosen_path)
     files_full_path = [os.path.join(files_path, f) for f in os.listdir(files_path) if f.endswith(extension)]
     return files_full_path
 
