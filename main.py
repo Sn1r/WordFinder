@@ -7,4 +7,4 @@ if __name__ == '__main__':
         find_word_in_files(str_to_find)
     except IndexError:
         print('[!] Please provide a valid argument\n'
-        '[+] Example: pytohn main.py fooo')
+        '[+] Example: pytohn main.py foo')
