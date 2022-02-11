@@ -20,7 +20,7 @@ def find_word_in_files(str_to_find):
         sleep(0.01)
         
     for file in all_files:
-        with open(file, 'r', encoding="utf-8", errors="ignore") as f:
+        with open(file, 'r', encoding="utf-8", errors="ignaore") as f:
             lines = f.readlines()
             for line in lines:
                 if str_to_find in line:
