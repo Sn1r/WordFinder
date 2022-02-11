@@ -8,7 +8,6 @@ colors = {
 
 def get_files_path():
     chosen_path = input("Please enter a full path: \n").lower()
-    # files_path = os.path.join(os.curdir, chosen_path)
     ext = ['.txt', '.json', '.log', '.conf', '.csv', '.html', '.php', '.py', '.rb', '.xml', '.htm']
     files_full_path = [os.path.join(root, f) for (root, subdirs, files) in os.walk(chosen_path) for f in os.listdir(root) if f.endswith(tuple(ext))]
     return files_full_path
